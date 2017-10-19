@@ -6,6 +6,9 @@
   "files": [
     "index.js"
   ],
+  "engines": {
+    "node": ">=4.0"
+  },
   "repository": "https://github.com/vladgolubev/s3-bucket-name-validator",
   "author": "Vlad Holubiev",
   "license": "MIT",
@@ -13,13 +16,13 @@
   "scripts": {
     "test": "jest"
   },
+  "dependencies": {
+    "is-ip": "^2.0.0"
+  },
   "devDependencies": {
     "jest": "^21.2.1"
   },
   "jest": {
     "testEnvironment": "node"
-  },
-  "dependencies": {
-    "is-ip": "^2.0.0"
   }
 }
