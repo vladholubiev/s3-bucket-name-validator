@@ -30,6 +30,8 @@ This code was grabbed from AWS S3 front-end
 <details>
   <summary>Click to expand obfuscated code 😰</summary>
 
+  URL: [d3v76wtu1o9bby.cloudfront.net/js/s3_console_Prod.gz.js](https://d3v76wtu1o9bby.cloudfront.net/js/s3_console_Prod4fe24536a9e722105c18a8a473e27642d63c624b.gz.js)
+
   ```js
   this.isValidBucketName = function(D) {
       var B = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
