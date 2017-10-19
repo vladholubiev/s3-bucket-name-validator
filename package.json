@@ -1,6 +1,6 @@
 {
   "name": "s3-bucket-name-validator",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Validate S3 bucket name and get error reason",
   "main": "index.js",
   "files": [
