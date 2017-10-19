@@ -2,9 +2,21 @@
   "name": "s3-bucket-name-validator",
   "version": "0.1.0",
   "description": "Validate S3 bucket name and get error reason",
-  "main": "lib/index.js",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "repository": "https://github.com/vladgolubev/s3-bucket-name-validator",
   "author": "Vlad Holubiev",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
 }
