@@ -22,3 +22,79 @@ if (bucketNameError) {
 
 validateS3BucketName('1.this.is.valid.2'); // ''
 ```
+
+## Reference
+
+This code was grabbed from AWS S3 front-end
+
+<details>
+  <summary>Click to expand obfuscated code 😰</summary>
+
+  ```js
+  this.isValidBucketName = function(D) {
+      var B = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
+      if (!D) {
+          B.push(t.instant("createbucketmodal.validation.invalid.error"));
+          return false
+      }
+      var F = "\0";
+      var H = "";
+      for (var C = 0; C < D.length; C++) {
+          var E = D.charAt(C);
+          var G = "";
+          if (/[A-Z]/.test(E)) {
+              var I = t.instant("createbucketmodal.validation.uppercase.error");
+              if (B.indexOf(I) === -1) {
+                  B.push(I)
+              }
+          }
+          if (E === ".") {
+              if (F === "\0") {
+                  G = t.instant("createbucketmodal.validation.start.error")
+              }
+              if (F === ".") {
+                  G = t.instant("createbucketmodal.validation.periods.error")
+              }
+              if (F === "-") {
+                  G = t.instant("createbucketmodal.validation.dashperiod.error")
+              }
+          } else {
+              if (E === "-") {
+                  if (F === "\0") {
+                      G = t.instant("createbucketmodal.validation.start.error")
+                  }
+                  if (F === ".") {
+                      G = t.instant("createbucketmodal.validation.dashperiod.error")
+                  }
+              } else {
+                  if (!/[a-z0-9]/.test(E) && H.indexOf(E) === -1) {
+                      if (!/[A-Z]/.test(E)) {
+                          H += E
+                      }
+                      if (F === "\0") {
+                          G = t.instant("createbucketmodal.validation.start.error")
+                      }
+                  }
+              }
+          }
+          if (G && B.indexOf(G) === -1) {
+              B.push(G)
+          }
+          F = E
+      }
+      if (F === "." || F === "-") {
+          B.push(t.instant("createbucketmodal.validation.end.error"))
+      }
+      if (H.length > 0) {
+          B.push(t.instant("createbucketmodal.validation.badchars.error") + " '" + H + "'")
+      }
+      if (D.length < 3 || D.length > 63) {
+          B.push(t.instant("createbucketmodal.validation.length.error"))
+      }
+      if (/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(D)) {
+          B.push(t.instant("createbucketmodal.validation.ipaddress.error"))
+      }
+      return B.length === 0
+  }
+  ```
+</details>
