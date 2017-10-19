@@ -1,0 +1,9 @@
+.idea/
+coverage/
+lib/
+node_modules/
+
+*.log
+*.sh
+.DS_Store
+yarn.lock
