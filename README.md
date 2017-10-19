@@ -13,10 +13,12 @@ $ yarn add s3-bucket-name-validator
 ```js
 const validateS3BucketName = require('s3-bucket-name-validator');
 
-validateS3BucketName('-invalid.name');
-// { isValid: false, error: 'Bucket name must start with a letter or number. -invalid.name' }
+// Returns error string with reason if invalid. Empty string otherwise
 
-validateS3BucketName('1.this.is.valid.2');
-// { isValid: true, error: '' }
+const bucketNameError = validateS3BucketName('-invalid.name'); // 'Bucket name must start with a letter or number. -invalid.name'
+if (bucketNameError) {
+  // ... some logic
+}
+
+validateS3BucketName('1.this.is.valid.2'); // ''
 ```
- 
